@@ -28,9 +28,11 @@ if($desc.length){
 	$helpIcon.after("<span id='jm-init'>JM</span>");
 	
 	$("#jm-init").live("click", function(){
-		var $area = $desc.find("textarea:first");
-		var $parent = $area.parent();
-		$area.hide();		
-		$parent.append("test");
+		$.ajax(chrome.extension.getURL('/src/template.html'), {dataType: "html", success: function(data){
+			var $area = $desc.find("textarea:first");
+			var $parent = $area.parent();
+			$area.hide();
+			$parent.append(data);
+		}});
 	})
 }

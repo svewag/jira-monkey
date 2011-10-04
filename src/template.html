@@ -1,0 +1,100 @@
+<!--
+ 
+||Wo|| ||
+|Instanz (Live, Stage, Devel)|devel | 
+|Browser| im IE 6 geprüft|
+|Betriebssytem (Win XP, Win 7,  Mac OS X) | Win XP|
+|Sprache|de | 
+|Screenshot/Screencast| ja |
+|Skin (Consumer, Member, Agentur)|agent  | 
+|Nutzername + Passwort|  -- | 
+|Buchungsnummern (PNRs)| -- |
+
+h2. *Wie (Reproduzierungsschritte)*
+Schritt-Für-Schritt-Beschreibung (1. 2. 3...), "von www.TUIfly.com bis zum Fehlerpunkt"
+# BookingList im IE 6 aufrufen
+
+{color:red}*Eigentliche Fehlerbeschreibung (Wie äußert sich der Fehler?)*{color}
+# Browser Update Leiste wird doppelt agezeigt
+
+{color:green}*Beschreibung des eigentlich erwarteten Verhaltens (Was soll geschehen?)*{color}
+# Update Leiste nur einmal anzeigen
+ 
+ -->
+
+<table>
+	<tr>
+		<td>Instanz</td>
+		<td>
+			<label for="jm-instance-devel">Devel</label><input id="jm-instance-devel" type="checkbox" value="devel" />
+			<label for="jm-instance-stage">Stage</label><input id="jm-instance-stage" type="checkbox" value="stage" />
+			<label for="jm-instance-live">Live</label><input id="jm-instance-live" type="checkbox" value="live" />
+		</td>
+	</tr>
+	
+	<tr>
+		<td>Browser</td>
+		<td>
+			<label for="jm-browser-ie6">IE 6</label><input id="jm-browser-ie6" type="checkbox" value="ie6" />
+			<label for="jm-browser-ie7">IE 7</label><input id="jm-browser-ie7" type="checkbox" value="ie7" />
+			<label for="jm-browser-ie8">IE 8</label><input id="jm-browser-ie8" type="checkbox" value="ie8" />
+			<label for="jm-browser-ie9">IE 9</label><input id="jm-browser-ie9" type="checkbox" value="ie9" />
+			<label for="jm-browser-ff3">FF 3</label><input id="jm-browser-ff3" type="checkbox" value="Firefox 3" />
+			<label for="jm-browser-ff4">FF 4</label><input id="jm-browser-ff4" type="checkbox" value="Firefox 4" />
+			<label for="jm-browser-ff4+">FF 4+</label><input id="jm-browser-ff4+" type="checkbox" value="Firefox 4+" />
+			<label for="jm-browser-chrome">Chrome</label><input id="jm-browser-chrome" type="checkbox" value="Chrome" />
+			<input type="text" id="jm-browser-other" />
+		</td>
+	</tr>
+	
+	<tr>
+		<td>Betriebssystem</td>
+		<td>
+			<label for="jm-os-xp">XP</label><input id="jm-os-xp" type="checkbox" value="XP" />
+			<label for="jm-os-vista">Vista</label><input id="jm-os-vista" type="checkbox" value="Vista" />
+			<label for="jm-os-win7">Win7</label><input id="jm-os-win7" type="checkbox" value="Win7" />
+			<label for="jm-os-mac">Mac OSX</label><input id="jm-os-mac" type="checkbox" value="Mac OSX" />
+			<input type="text" id="jm-os-other" />
+		</td>
+	</tr>
+	
+	<tr>
+		<td>Sprache</td>
+		<td>
+			<label for="jm-culture-de">de-DE</label><input id="jm-culture-de" type="checkbox" value="de-DE" />
+			<label for="jm-culture-en">en-GB</label><input id="jm-culture-en" type="checkbox" value="en-GB" />
+			<label for="jm-culture-es">es-ES</label><input id="jm-culture-es" type="checkbox" value="es-ES" />
+			<label for="jm-culture-it">it-IT</label><input id="jm-culture-it" type="checkbox" value="it-IT" />
+		</td>
+	</tr>
+	
+	<tr>
+		<td>Screenshot</td>
+		<td><input type="checkbox" id="jm-screenshot" value="true" /></td>
+	</tr>
+	
+	<tr>
+		<td>Skin</td>
+		<td>
+			<label for="jm-skin-consumer">Consumer</label><input id="jm-skin-consumer" type="checkbox" value="Consumer" />
+			<label for="jm-skin-member">Member</label><input id="jm-skin-member" type="checkbox" value="Member" />
+			<label for="jm-skin-agent">Agent</label><input id="jm-skin-agent" type="checkbox" value="Agent" />
+		</td>
+	</tr>
+	
+	<tr>
+		<td>Nutzername + Passwort</td>
+		<td><input id="jm-username" type="text" />&nbsp;+&nbsp;<input id="jm-password" type="text" /></td>
+	</tr>
+	
+	<tr>
+		<td>PNR</td>
+		<td><input id="jm-pnr" type="text" /></td>
+	</tr>
+	
+	<tr>
+		<td>Bemerkung</td>
+		<td><textarea id="jm-note"></textarea></td>
+	</tr>
+	
+</table>

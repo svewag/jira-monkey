@@ -135,7 +135,7 @@
   
   "content_scripts": [
     {
-      "matches": ["https://webperfect.sinnerschrader.de/jira/secure/EditIssue*", "https://webperfect.sinnerschrader.de/jira/secure/CreateIssue.jspa"],
+      "matches": ["https://webperfect.sinnerschrader.de/jira/secure/EditSubTaskIssue*", "https://webperfect.sinnerschrader.de/jira/secure/EditIssue*", "https://webperfect.sinnerschrader.de/jira/secure/CreateIssue.jspa"],
       "css": ["src/contentStyle.css"],
       "js": ["lib/jquery.min.js", "src/contentScript.js"]
     }
