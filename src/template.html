@@ -22,79 +22,107 @@ Schritt-Für-Schritt-Beschreibung (1. 2. 3...), "von www.TUIfly.com bis zum Fehl
  
  -->
 
-<table>
+<style type="text/css">
+	.jm-table td {vertical-align:top;}
+	.jm-table input {margin-left:10px;}
+</style>
+
+<table id="jm-table">
 	<tr>
 		<td>Instanz</td>
-		<td>
-			<label for="jm-instance-devel">Devel</label><input id="jm-instance-devel" type="checkbox" value="devel" />
-			<label for="jm-instance-stage">Stage</label><input id="jm-instance-stage" type="checkbox" value="stage" />
-			<label for="jm-instance-live">Live</label><input id="jm-instance-live" type="checkbox" value="live" />
+		<td class="js-instance">
+			<input id="jm-instance-devel" type="checkbox" value="devel" /><label for="jm-instance-devel">Devel</label>
+			<input id="jm-instance-stage" type="checkbox" value="stage" /><label for="jm-instance-stage">Stage</label>
+			<input id="jm-instance-live" type="checkbox" value="live" /><label for="jm-instance-live">Live</label>
 		</td>
 	</tr>
 	
 	<tr>
 		<td>Browser</td>
-		<td>
-			<label for="jm-browser-ie6">IE 6</label><input id="jm-browser-ie6" type="checkbox" value="ie6" />
-			<label for="jm-browser-ie7">IE 7</label><input id="jm-browser-ie7" type="checkbox" value="ie7" />
-			<label for="jm-browser-ie8">IE 8</label><input id="jm-browser-ie8" type="checkbox" value="ie8" />
-			<label for="jm-browser-ie9">IE 9</label><input id="jm-browser-ie9" type="checkbox" value="ie9" />
-			<label for="jm-browser-ff3">FF 3</label><input id="jm-browser-ff3" type="checkbox" value="Firefox 3" />
-			<label for="jm-browser-ff4">FF 4</label><input id="jm-browser-ff4" type="checkbox" value="Firefox 4" />
-			<label for="jm-browser-ff4+">FF 4+</label><input id="jm-browser-ff4+" type="checkbox" value="Firefox 4+" />
-			<label for="jm-browser-chrome">Chrome</label><input id="jm-browser-chrome" type="checkbox" value="Chrome" />
+		<td class="js-browser">
+			<input id="jm-browser-ie6" type="checkbox" value="ie6" /><label for="jm-browser-ie6">IE 6</label>
+			<input id="jm-browser-ie7" type="checkbox" value="ie7" /><label for="jm-browser-ie7">IE 7</label>
+			<input id="jm-browser-ie8" type="checkbox" value="ie8" /><label for="jm-browser-ie8">IE 8</label>
+			<input id="jm-browser-ie9" type="checkbox" value="ie9" /><label for="jm-browser-ie9">IE 9</label><br />
+			<input id="jm-browser-ff3" type="checkbox" value="Firefox 3" /><label for="jm-browser-ff3">FF 3</label>
+			<input id="jm-browser-ff4" type="checkbox" value="Firefox 4" /><label for="jm-browser-ff4">FF 4</label>
+			<input id="jm-browser-ff4+" type="checkbox" value="Firefox 4+" /><label for="jm-browser-ff4+">FF 4+</label>
+			<input id="jm-browser-chrome" type="checkbox" value="Chrome" /><label for="jm-browser-chrome">Chrome</label><br />
 			<input type="text" id="jm-browser-other" />
 		</td>
 	</tr>
 	
 	<tr>
 		<td>Betriebssystem</td>
-		<td>
-			<label for="jm-os-xp">XP</label><input id="jm-os-xp" type="checkbox" value="XP" />
-			<label for="jm-os-vista">Vista</label><input id="jm-os-vista" type="checkbox" value="Vista" />
-			<label for="jm-os-win7">Win7</label><input id="jm-os-win7" type="checkbox" value="Win7" />
-			<label for="jm-os-mac">Mac OSX</label><input id="jm-os-mac" type="checkbox" value="Mac OSX" />
+		<td class="js-os">
+			<input id="jm-os-xp" type="checkbox" value="XP" /><label for="jm-os-xp">XP</label>
+			<input id="jm-os-vista" type="checkbox" value="Vista" /><label for="jm-os-vista">Vista</label>
+			<input id="jm-os-win7" type="checkbox" value="Win7" /><label for="jm-os-win7">Win7</label>
+			<input id="jm-os-mac" type="checkbox" value="Mac OSX" /><label for="jm-os-mac">Mac OSX</label>
 			<input type="text" id="jm-os-other" />
 		</td>
 	</tr>
 	
 	<tr>
 		<td>Sprache</td>
-		<td>
-			<label for="jm-culture-de">de-DE</label><input id="jm-culture-de" type="checkbox" value="de-DE" />
-			<label for="jm-culture-en">en-GB</label><input id="jm-culture-en" type="checkbox" value="en-GB" />
-			<label for="jm-culture-es">es-ES</label><input id="jm-culture-es" type="checkbox" value="es-ES" />
-			<label for="jm-culture-it">it-IT</label><input id="jm-culture-it" type="checkbox" value="it-IT" />
+		<td class="js-language">
+			<input id="jm-culture-de" type="checkbox" value="de-DE" /><label for="jm-culture-de">de-DE</label>
+			<input id="jm-culture-en" type="checkbox" value="en-GB" /><label for="jm-culture-en">en-GB</label>
+			<input id="jm-culture-es" type="checkbox" value="es-ES" /><label for="jm-culture-es">es-ES</label>
+			<input id="jm-culture-it" type="checkbox" value="it-IT" /><label for="jm-culture-it">it-IT</label>
 		</td>
 	</tr>
 	
 	<tr>
 		<td>Screenshot</td>
-		<td><input type="checkbox" id="jm-screenshot" value="true" /></td>
+		<td class="js-screenshot"><input type="checkbox" id="jm-screenshot" value="true" /></td>
 	</tr>
 	
 	<tr>
 		<td>Skin</td>
-		<td>
-			<label for="jm-skin-consumer">Consumer</label><input id="jm-skin-consumer" type="checkbox" value="Consumer" />
-			<label for="jm-skin-member">Member</label><input id="jm-skin-member" type="checkbox" value="Member" />
-			<label for="jm-skin-agent">Agent</label><input id="jm-skin-agent" type="checkbox" value="Agent" />
+		<td class="js-skin">
+			<input id="jm-skin-consumer" type="checkbox" value="Consumer" /><label for="jm-skin-consumer">Consumer</label>
+			<input id="jm-skin-member" type="checkbox" value="Member" /><label for="jm-skin-member">Member</label>
+			<input id="jm-skin-agent" type="checkbox" value="Agent" /><label for="jm-skin-agent">Agent</label>
 		</td>
 	</tr>
 	
 	<tr>
 		<td>Nutzername + Passwort</td>
-		<td><input id="jm-username" type="text" />&nbsp;+&nbsp;<input id="jm-password" type="text" /></td>
+		<td class="js-login"><input id="jm-username" type="text" />&nbsp;+&nbsp;<input id="jm-password" type="text" /></td>
 	</tr>
 	
 	<tr>
 		<td>PNR</td>
-		<td><input id="jm-pnr" type="text" /></td>
+		<td class="js-pnr"><input id="jm-pnr" type="text" /></td>
 	</tr>
 	
 	<tr>
-		<td>Bemerkung</td>
-		<td><textarea id="jm-note"></textarea></td>
+		<td colspan="2">Reproduzierungsschritte</td>
+	</tr>
+	<tr>
+		<td class="js-steps" colspan="2"><textarea id="jm-steps"></textarea></td>
+	</tr>
+	
+	<tr>
+		<td colspan="2">Fehlerbeschreibung</td>
+	</tr>
+	<tr>
+		<td class="js-error" colspan="2"><textarea id="jm-error"></textarea></td>
+	</tr>
+	
+	<tr>
+		<td colspan="2">erwartetes Verhalten</td>
+	</tr>
+	<tr>
+		<td class="js-correct" colspan="2"><textarea id="jm-correct"></textarea></td>
+	</tr>
+	
+	<tr>
+		<td colspan="2">Bemerkung</td>
+	</tr>
+	<tr>
+		<td class="js-note" colspan="2"><textarea id="jm-note"></textarea></td>
 	</tr>
 	
 </table>
