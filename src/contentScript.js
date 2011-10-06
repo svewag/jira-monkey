@@ -49,11 +49,29 @@ var Bug = function(){
 		},
 		updateBrowser: function($node){
 			var $eles = $node.find(".js-browser :checked");
-			this._fields["browser"] = this.stringifyCheckedValues($eles);
+			
+			var values = this.stringifyCheckedValues($eles);
+			var other = $node.find("#jm-browser-other").val();
+			if(other){
+				if(values){
+					values += ", ";
+				}
+				values += other;
+			}
+			this._fields["browser"] = values;
 		},
 		updateOS: function($node){
 			var $eles = $node.find(".js-os :checked");
-			this._fields["os"] = this.stringifyCheckedValues($eles);
+			
+			var values = this.stringifyCheckedValues($eles);
+			var other = $node.find("#jm-os-other").val();
+			if(other){
+				if(values){
+					values += ", ";
+				}
+				values += other;
+			}
+			this._fields["os"] = values;
 		},
 		updateLanguage: function($node){
 			var $eles = $node.find(".js-language :checked");
@@ -70,7 +88,9 @@ var Bug = function(){
 		updateLogin: function($node){
 			var user = $node.find(".js-login #jm-username").val();
 			var pw = $node.find(".js-login #jm-password").val();
-			this._fields["login"] = user + " / " + pw;
+			if(user && pw){
+				this._fields["login"] = user + " / " + pw;
+			}
 		},
 		updatePNR: function($node){
 			var $input = $node.find(".js-pnr input");
@@ -118,7 +138,7 @@ var Bug = function(){
 				if(field === "steps" || field === "error" || field === "correct" || field === "note"){
 					content += this._fields[field];
 				} else {
-					content += "|"+field+"|" + this._fields[field] + "|\n";
+					content += "|"+field+"|" + (this._fields[field] || " ") + "|\n";
 				}
 			}
 			$("#description").html(content);
@@ -145,13 +165,16 @@ var Controller = function(){
 var $desc = $("#descriptionFieldArea");
 if($desc.length){
 	var $helpIcon = $desc.find("#viewHelp");
-	$helpIcon.after("<span id='jm-init'>JM</span>");
+	$helpIcon.after("<span id='jm-init'><img src='"+chrome.extension.getURL('/src/wizard.png')+"' /></span>");
 	
 	$("#jm-init").live("click", function(){
 		$.ajax(chrome.extension.getURL('/src/template.html'), {dataType: "html", success: function(data){
 			var $area = $desc.find("textarea:first");
 			var $parent = $area.parent();
-			//$area.hide();
+			$area.hide();
+			$("#description-preview_link_div").hide();
+			$("#viewHelp").hide();
+			$("#jm-init").hide();
 			$parent.append(data);
 		}});
 	})

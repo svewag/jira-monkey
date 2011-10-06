@@ -1,1 +1,3 @@
 #jm-init {font-weight:bold; font-size:15px; cursor:pointer; }
+#jm-table textarea {width:450px; height:125px;}
+#jm-table td {padding:3px;}
