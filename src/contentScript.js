@@ -36,6 +36,7 @@ var Bug = function(){
 			this.updateScreenshot($table);
 			this.updateLogin($table);
 			this.updatePNR($table);
+			
 			this.updateSteps($table);
 			this.updateError($table);
 			this.updateCorrect($table);
@@ -77,19 +78,28 @@ var Bug = function(){
 		},
 		updateSteps: function($node){
 			var $input = $node.find(".js-steps textarea");
-			this._fields["steps"] = this.stringifyInputValue($input);
+			
+			var value = '\n\nh2. *Wie (Reproduzierungsschritte)*\nSchritt-Für-Schritt-Beschreibung (1. 2. 3...), "von www.TUIfly.com bis zum Fehlerpunkt"\n'
+			value += this.stringifyInputValue($input);
+			this._fields["steps"] = value;
 		},
 		updateError: function($node){
 			var $input = $node.find(".js-error textarea");
-			this._fields["error"] = this.stringifyInputValue($input);
+			
+			var value = '\n\n{color:red}*Eigentliche Fehlerbeschreibung (Wie äußert sich der Fehler?)*{color}\n'
+			value += this.stringifyInputValue($input);
+			this._fields["error"] = value;
 		},
 		updateCorrect: function($node){
 			var $input = $node.find(".js-correct textarea");
-			this._fields["correct"] = this.stringifyInputValue($input);
+			
+			var value = '\n\n{color:green}*Beschreibung des eigentlich erwarteten Verhaltens (Was soll geschehen?)*{color}\n'
+			value += this.stringifyInputValue($input);
+			this._fields["correct"] = value;
 		},
 		updateNote: function($node){
 			var $input = $node.find(".js-note textarea");
-			this._fields["note"] = this.stringifyInputValue($input);
+			this._fields["note"] = "\n\n"+this.stringifyInputValue($input);
 		},
 		stringifyInputValue: function($input){
 			return $input.val();
@@ -105,7 +115,11 @@ var Bug = function(){
 		submit: function(){
 			var content = "||Wo|| ||\n";
 			for(var field in this._fields){
-				content += "|"+field+"|" + this._fields[field] + "|\n";
+				if(field === "steps" || field === "error" || field === "correct" || field === "note"){
+					content += this._fields[field];
+				} else {
+					content += "|"+field+"|" + this._fields[field] + "|\n";
+				}
 			}
 			$("#description").html(content);
 		}
